@@ -1,4 +1,4 @@
-module Updates
+module CheckZilla
   class CLI  < Clamp::Command
     parameter "CONFIGURATION ...", "the configuration file", :attribute_name => :config_file
 

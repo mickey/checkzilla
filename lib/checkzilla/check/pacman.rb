@@ -2,7 +2,7 @@ require 'json'
 require 'net/http'
 
 # requires package-query
-module Updates
+module CheckZilla
   module Check
     class Pacman
 

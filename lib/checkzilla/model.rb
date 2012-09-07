@@ -1,4 +1,4 @@
-module Updates
+module CheckZilla
   class Model
 
     attr_reader :checkers, :notifiers
@@ -20,11 +20,11 @@ module Updates
     end
 
     def check_updates klass, &block
-      @checkers << Updates::Check.const_get(klass.to_s.capitalize).new(&block)
+      @checkers << CheckZilla::Check.const_get(klass.to_s.capitalize).new(&block)
     end
 
     def notify_by klass, &block
-      @notifiers << Updates::Notifier.const_get(klass.to_s.capitalize).new(&block)
+      @notifiers << CheckZilla::Notifier.const_get(klass.to_s.capitalize).new(&block)
     end
   end
 end

@@ -1,6 +1,6 @@
 require 'hipchat'
 
-module Updates
+module CheckZilla
   module Notifier
     class Hipchat
 

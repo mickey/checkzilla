@@ -12,7 +12,7 @@ require 'minitest/unit'
 require 'minitest/spec'
 require 'test/unit'
 
-require 'updates'
+require 'checkzilla'
 
 # load all other test helpers
 Dir[File.expand_path("../test_helpers/*.rb", __FILE__)].each { |f| require f }

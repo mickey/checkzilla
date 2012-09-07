@@ -1,6 +1,6 @@
-module Updates
+module CheckZilla
 
-  LIBRARY_PATH        = File.join(File.dirname(__FILE__), 'updates')
+  LIBRARY_PATH        = File.join(File.dirname(__FILE__), 'checkzilla')
   CHECK_UPDATE_PATH   = File.join(LIBRARY_PATH, 'check')
   NOTIFIER_PATH       = File.join(LIBRARY_PATH, 'notifier')
 

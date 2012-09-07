@@ -3,7 +3,7 @@ require 'test_helper'
 describe "detect Gemfile.lock files" do
 
   before do
-    @rubygem = Updates::Check::Rubygem.new
+    @rubygem = CheckZilla::Check::Rubygem.new
     @rubygem.path = "#{File.expand_path(File.dirname(__FILE__))}/../test/fixtures"
   end
 
@@ -21,7 +21,7 @@ end
 describe "Parse and extracts dependencies" do
 
   before do
-    @rubygem = Updates::Check::Rubygem.new
+    @rubygem = CheckZilla::Check::Rubygem.new
     @rubygem.path = "#{File.expand_path(File.dirname(__FILE__))}/../test/fixtures"
   end
 

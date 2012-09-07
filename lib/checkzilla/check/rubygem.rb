@@ -2,7 +2,7 @@ require 'json'
 require 'net/http'
 require 'bundler'
 
-module Updates
+module CheckZilla
   module Check
     # Try to determine your gems dependencies and which are not up to date
     
