@@ -1,6 +1,6 @@
 ## CheckZilla
 
-CheckZilla is command line tool allowing you to check and be notified of outdated software.
+CheckZilla is a command line tool allowing you to check and be notified of outdated software.
 CheckZilla is extensible and already supports multiple "Checkers" (RubyGem, Pacman, Node.js) and "Notifiers" (Console, Email, HipChat).
 
 The main usage currently is to use it as a CRON, notifying you everyday of new softwares.
@@ -34,11 +34,11 @@ end
 
 ## Checkers
 
-Checkers are defined via a `CheckZilla::Check` class, they need to define 2 methods:
+Checkers are defined via a `CheckZilla::Check::NEW_CHECKER` class, they need to define 2 methods:
 
 `initialize(&block)` returns self
 
-`perform!` fills @results with @results[software_name] = [software_current_version, software_newer_version]
+`perform!` fills `@results` with `@results[software_name] = [software_current_version, software_newer_version]`
 
 Here's the list of availables checkers:
 
@@ -76,7 +76,7 @@ It requires `path` and will determine the dependencies via `npm outdated`
 
 ## Notifiers
 
-Checkers are defined via a `CheckZilla::Notifier` class, they need to define 2 methods:
+Notifiers are defined via a `CheckZilla::Notifier::NEW_NOTIFIER` class, they need to define 2 methods:
 
 `initialize(&block)` returns self
 
@@ -127,3 +127,10 @@ end
 ```
 
 Sends you a notification to the [HipChat](http://hipchat.com) room of your choice
+
+## Helping out
+
+* Feedback is good
+* Issue reporting is better
+* Pull requests are way better
+* Awesome pull requests are *obviously awesome*
