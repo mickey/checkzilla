@@ -6,6 +6,12 @@ Updates::Model.new('This is the title of my report') do
 
   check_updates :pacman
 
+  notify_by :hipchat do |hipchat|
+    hipchat.api_token = '95def4314870443f46b8c4694bd88e'
+    hipchat.room = 'test'
+    hipchat.username = 'CheckUpdates'
+  end
+
   notify_by :email do |email|
     email.pony_settings = {
       :to => 'you@gmail.com',
@@ -22,12 +28,6 @@ Updates::Model.new('This is the title of my report') do
         :domain               => "localhost.localdomain"
       }
     }
-  end
-
-  notify_by :hipchat do |hipchat|
-    hipchat.api_token = '95def4314870443f46b8c4694bd88e'
-    hipchat.room = 'test'
-    hipchat.username = 'CheckUpdates'
   end
 
   notify_by :console
