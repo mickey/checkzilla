@@ -128,6 +128,13 @@ end
 
 Sends you a notification to the [HipChat](http://hipchat.com) room of your choice
 
+## TODO
+
+- gemspec
+- Notifiers: Growl, kdialog, notify-send
+- Checkers: Homebrew, apt-get
+- Rack Application and/or HTML report
+
 ## Helping out
 
 * Feedback is good
