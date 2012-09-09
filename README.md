@@ -131,7 +131,7 @@ Sends you a notification to the [HipChat](http://hipchat.com) room of your choic
 ## TODO
 
 - gemspec
-- Notifiers: Growl, kdialog, notify-send
+- Notifiers: Growl, kdialog, notify-send, basecamp, jabber
 - Checkers: Homebrew, apt-get
 - Rack Application and/or HTML report
 
