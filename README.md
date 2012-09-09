@@ -1,9 +1,9 @@
 ## CheckZilla
 
 CheckZilla is a command line tool allowing you to check and be notified of outdated software.
-CheckZilla is extensible and already supports multiple "Checkers" (RubyGem, Pacman, Node.js) and "Notifiers" (Console, Email, HipChat).
+CheckZilla is extensible and already supports multiple "Checkers" (RubyGem, Pacman, Npm) and "Notifiers" (Console, Email, HipChat).
 
-The main usage currently is to use it as a CRON, notifying you everyday of new softwares.
+The main usage currently is to use it as a CRON notifying you everyday of new softwares updates.
 
 **Warning** This is Beta Software !
 
@@ -64,7 +64,7 @@ Tries to determine your outdated package via:
 
 **Warning** You need to execute checkzilla as root as I didn't find a better way to ask pacman to synchronise the db. `package-query` is required (it's a dependency of yaourt).
 
-### Node.js
+### Npm
 
 ```
 check_updates :npm do |npm|
