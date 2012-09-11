@@ -1,7 +1,7 @@
 ## CheckZilla
 
 CheckZilla is a command line tool allowing you to check and be notified of outdated software.
-CheckZilla is extensible and already supports multiple "Checkers" (RubyGem, Pacman, Npm) and "Notifiers" (Console, Email, HipChat).
+CheckZilla is extensible and already supports multiple "Checkers" (RubyGem, Pacman, Npm) and "Notifiers" (Console, Email, HipChat, nottify-send).
 
 The main usage currently is to use it as a CRON notifying you everyday of new softwares updates.
 
@@ -128,9 +128,17 @@ end
 
 Sends you a notification to the [HipChat](http://hipchat.com) room of your choice
 
+### notify-send
+
+```
+notify_by :notify_send
+```
+
+Send a desktop notification (onlly tested on archlinux/xfce but should work on ubuntu/unity).
+
 ## TODO
 
-- Notifiers: Growl, kdialog, notify-send, basecamp, jabber
+- Notifiers: Growl, kdialog, basecamp, jabber
 - Checkers: Homebrew, apt-get
 - Rack Application and/or HTML report
 

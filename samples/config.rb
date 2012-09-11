@@ -36,4 +36,6 @@ CheckZilla::Model.new('This is the title of my report') do
 
   notify_by :console
 
+  notify_by :notify_send
+
 end

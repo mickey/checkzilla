@@ -20,11 +20,16 @@ module CheckZilla
     end
 
     def check_updates klass, &block
-      @checkers << CheckZilla::Check.const_get(klass.to_s.capitalize).new(&block)
+      @checkers << CheckZilla::Check.const_get(camelize(klass.to_s)).new(&block)
     end
 
     def notify_by klass, &block
-      @notifiers << CheckZilla::Notifier.const_get(klass.to_s.capitalize).new(&block)
+      @notifiers << CheckZilla::Notifier.const_get(camelize(klass.to_s)).new(&block)
     end
+
+    private
+      def camelize(term)
+        term.split(/[^a-z0-9]/i).map{|w| w.capitalize}.join
+      end
   end
 end
