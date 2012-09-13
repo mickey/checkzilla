@@ -138,7 +138,7 @@ Send a desktop notification (only tested on archlinux/xfce but should work on ub
 
 ## TODO
 
-- Notifiers: Growl, kdialog, basecamp, jabber
+- Notifiers: Twitter, Growl, kdialog, basecamp, jabber
 - Checkers: Homebrew, apt-get
 - Rack Application and/or HTML report
 
