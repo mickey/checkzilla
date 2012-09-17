@@ -15,7 +15,7 @@ $> checkzilla your-config-file
 
 The configuration is using a DSL, here's a sample :
 
-```
+```ruby
 CheckZilla::Model.new('This is the title of my report') do
 
   check_updates :rubygem do |rubygem|
@@ -44,7 +44,7 @@ Here's the list of availables checkers:
 
 ### Rubygem
 
-```
+```ruby
 check_updates :rubygem do |rubygem|
   rubygem.path = "/home/mike/code/diaspora"
 end
@@ -54,7 +54,7 @@ Tries to find a `Gemfile.lock` if `path` is defined, otherwise will use `gem lis
   
 ### Pacman
 
-```
+```ruby
 check_updates :pacman
 ```
 
@@ -66,7 +66,7 @@ Tries to determine your outdated package via:
 
 ### Npm
 
-```
+```ruby
 check_updates :npm do |npm|
   npm.path = "/home/mike/code/nodes3"
 end
@@ -86,15 +86,26 @@ Here's the list of availables notifiers:
 
 ### Console
 
-```
+```ruby
 notify_by :console
 ```
 
 Outputs to the console.
 
+### Twitter
+
+```ruby
+notify_by :twitter do |twitter|
+  twitter.consumer_key = YOUR_CONSUMER_KEY
+  twitter.consumer_secret = YOUR_CONSUMER_SECRET
+  twitter.oauth_token = YOUR_OAUTH_TOKEN
+  twitter.oauth_token_secret = YOUR_OAUTH_TOKEN_SECRET
+end
+```
+
 ### Email
 
-```
+```ruby
 notify_by :email do |email|
   email.pony_settings = {
     :to => 'you@gmail.com',
@@ -118,7 +129,7 @@ Send you an email using [Pony](https://github.com/benprew/pony)
 
 ### Hipchat
 
-```
+```ruby
 notify_by :hipchat do |hipchat|
   hipchat.api_token = '95def4314870443f46b8c4694bd88e'
   hipchat.room = 'test'
@@ -130,7 +141,7 @@ Sends you a notification to the [HipChat](http://hipchat.com) room of your choic
 
 ### notify-send
 
-```
+```ruby
 notify_by :notify_send
 ```
 
@@ -138,6 +149,9 @@ Send a desktop notification (only tested on archlinux/xfce but should work on ub
 
 ## TODO
 
+- Persistence layer (no need to be fancy, a .yml could do it) so you can send incremental updates
+- Add notifiers global options like `only` and `except`. They'd both take an array of checkers.
+- Add notifier global option `template` ? So you can pimp your emails and Twitter mentions
 - Notifiers: Growl, kdialog, basecamp, jabber
 - Checkers: Homebrew, apt-get
 - Rack Application and/or HTML report

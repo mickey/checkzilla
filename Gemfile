@@ -6,6 +6,7 @@ gem 'clamp'
 gem 'hipchat'
 gem 'yard'
 gem 'pony'
+gem 'twitter'
 
 group :development do
   gem 'pry'

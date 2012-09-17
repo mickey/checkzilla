@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.rubyforge_project         = "checkzilla"
 
   s.add_dependency('clamp')
+  s.add_dependency('twitter')
   s.add_dependency('hipchat')
   s.add_dependency('clamp', '>= 0.3.0')
   s.add_dependency('pony')
