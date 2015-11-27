@@ -25,8 +25,7 @@ module CheckZilla
           end
           body << ["\n\n"]
         end
-        binding.pry
-        Pony.mail(@pony_settings.merge(:body => body.join("\n")))
+       Pony.mail(@pony_settings.merge(:body => body.join("\n")))
       end
     end
   end
