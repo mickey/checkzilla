@@ -2,7 +2,6 @@
 # encoding: utf-8
 
 require 'clamp'
-require 'pry'
 
 require File.expand_path("../../lib/checkzilla", __FILE__)
 

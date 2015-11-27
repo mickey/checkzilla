@@ -1,3 +1,4 @@
+
 module CheckZilla
   module Check
     class Npm
@@ -13,11 +14,13 @@ module CheckZilla
       end
 
       def perform!
-        raise "npm: directory doesn't exist" unless File.exists?(@path)
+        raise "npm: directory doesn't exist: %s" % @path unless File.exists?(@path)
         raw_result = `cd #{@path}; npm outdated --silent`
         raw_result.split("\n").each do |outdated_package|
-          outdated_hash = outdated_package.match /^(.+)@(.+)\s.+\s.+=(.+)$/
-          @results[outdated_hash[1]] = [outdated_hash[3], outdated_hash[2]]
+          puts "outdated: %s" % outdated_package
+          outdated_hash = outdated_package.split(/\s+/)
+          next if outdated_hash[0] == "Package"
+          @results[outdated_hash[0]] = [outdated_hash[1], outdated_hash[3]]
         end
       end
     end

@@ -5,7 +5,7 @@ require 'bundler'
 module CheckZilla
   module Check
     # Try to determine your gems dependencies and which are not up to date
-    
+
     # If a path is defined and a Gemfile.lock exists in the repository
     # it will parse it via bundler
 
@@ -27,7 +27,9 @@ module CheckZilla
       def perform!
         dependencies = @path && gemfilelock_exists? ? deps_from_gemfilelock : deps_from_gem_list
         dependencies.each do |gem_name, gem_version|
-          rubygems_response = Net::HTTP.get_response("rubygems.org","/api/v1/gems/#{gem_name}.json")
+          http = Net::HTTP.start("rubygems.org", 443,
+  use_ssl: true)
+          rubygems_response = http.get("/api/v1/gems/#{gem_name}.json")
           if rubygems_response.code.to_i >= 400
             puts "#{rubygems_response.code} on rubygems.org for #{gem_name}: #{rubygems_response.body}"
             next
